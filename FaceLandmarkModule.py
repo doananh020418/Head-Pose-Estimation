@@ -25,6 +25,6 @@ class FaceMeshDetector:
                 face = []
                 for id,lm in enumerate(flm.landmark):
                     x,y = int(lm.x*h),int(lm.y*w)
-                    face.append([x,y])
-            faces.append(face)
-        return img,faces
+                    face.append((x,y))
+                #faces.append(face)
+        return img,face
