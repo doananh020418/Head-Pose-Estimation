@@ -38,6 +38,7 @@ def estimatePose(im,image_points):
 	p1 = (int(image_points[0][0]), int(image_points[0][1]))
 	p2 = (int(nose_end_point2D[0][0][0]), int(nose_end_point2D[0][0][1]))
 	cv2.line(im, p1, p2, (255, 0, 0), 2)
+	return im
 
 
 def main():
@@ -54,18 +55,16 @@ def main():
 
 				img,faces = detector.findFaceMesh(img)
 				if len(faces)!=0:
-					image_points = np.array([
-						faces[1],
-						faces[175],
-						faces[247],
-						faces[467],
-						faces[57],
-						faces[287]
-					],dtype="double")
-					estimatePose(img,image_points)
-
-
-
+					print(faces[175])
+					# image_points = np.array([
+					# 	faces[1],
+					# 	faces[175],
+					# 	faces[247],
+					# 	faces[467],
+					# 	faces[57],
+					# 	faces[287]
+					# ],dtype="double")
+					# img = estimatePose(img,image_points)
 
 				ctime = time.time()
 				fps = 1/(ctime - ptime)

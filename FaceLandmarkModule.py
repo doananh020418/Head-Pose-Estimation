@@ -24,7 +24,7 @@ class FaceMeshDetector:
                                                              self.drawSpec, self.drawSpec)
                 face = []
                 for id,lm in enumerate(flm.landmark):
-                    x,y = int(lm.x*h),int(lm.y*w)
+                    x,y = int(lm.x*w),int(lm.y*h)
                     face.append((x,y))
                 #faces.append(face)
         return img,face
