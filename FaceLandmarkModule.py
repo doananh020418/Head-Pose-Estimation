@@ -22,9 +22,9 @@ class FaceMeshDetector:
                 if draw:
                     mp.solutions.drawing_utils.draw_landmarks(img, flm, mp.solutions.face_mesh.FACE_CONNECTIONS,
                                                              self.drawSpec, self.drawSpec)
-                face = []
+                faceLm = []
                 for id,lm in enumerate(flm.landmark):
                     x,y = int(lm.x*w),int(lm.y*h)
-                    face.append((x,y))
+                    faceLm.append((x,y))
                 #faces.append(face)
-        return img,face
+        return img,faceLm
